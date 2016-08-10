@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var header_component_1 = require('./header/header.component');
 var cityCard_service_1 = require('./cityCard/cityCard.service');
+var cityCard_component_1 = require('./cityCard/cityCard.component');
 var AppComponent = (function () {
     function AppComponent(cityCardService) {
         this.cityCardService = cityCardService;
@@ -24,7 +25,7 @@ var AppComponent = (function () {
             selector: 'my-app',
             templateUrl: './src/app/app.component.html',
             styles: [String(require('./app.component.css'))],
-            directives: [header_component_1.HeaderComponent],
+            directives: [header_component_1.HeaderComponent, cityCard_component_1.CityCardComponent],
             providers: [cityCard_service_1.CityCardService]
         }), 
         __metadata('design:paramtypes', [cityCard_service_1.CityCardService])

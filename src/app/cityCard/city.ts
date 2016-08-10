@@ -1,4 +1,5 @@
-export class Cities {
+export class City {
   id: number;
   name: string;
+  img: string;
 }
