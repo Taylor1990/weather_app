@@ -9,16 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
 var mock_cities_1 = require('./mock-cities');
+require('rxjs/add/operator/toPromise');
 var CityCardService = (function () {
-    function CityCardService() {
+    function CityCardService(http) {
+        this.http = http;
     }
     CityCardService.prototype.getCities = function () {
         return Promise.resolve(mock_cities_1.CITIES);
     };
+    CityCardService.prototype.getTemperature = function (city) {
+        var open_weather = 'http://api.openweathermap.org/data/2.5/weather?q=';
+        return this.http.get(open_weather + city + '&appid=13cb7fc7bbcbb873b6c84b9e84df4507').
+            toPromise().then(function (response) { return response.json(); });
+    };
     CityCardService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], CityCardService);
     return CityCardService;
 }());
