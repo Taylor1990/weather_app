@@ -1,8 +1,8 @@
 "use strict";
-var Cities = (function () {
-    function Cities() {
+var City = (function () {
+    function City() {
     }
-    return Cities;
+    return City;
 }());
-exports.Cities = Cities;
+exports.City = City;
 //# sourceMappingURL=city.js.map

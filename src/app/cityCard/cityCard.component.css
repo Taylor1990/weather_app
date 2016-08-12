@@ -1,0 +1,21 @@
+.cityCard_main{
+  width: 300px;
+  display: inline-block;
+  margin: 20px;
+  vertical-align: top;
+  background-color: #cccccc;
+  padding: 10px;
+  border-radius: 10px;
+  height: 187px;
+  cursor: pointer;
+}
+
+.cityCard_image{
+  width:45%;
+  float: left;
+  padding-right: 15px;
+}
+
+.cityCard_description{
+  margin-top: 10px;
+}

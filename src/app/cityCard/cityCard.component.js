@@ -9,28 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var header_component_1 = require('./header/header.component');
-var cityCard_service_1 = require('./cityCard/cityCard.service');
-var cityCard_component_1 = require('./cityCard/cityCard.component');
-var AppComponent = (function () {
-    function AppComponent(cityCardService) {
+var city_1 = require('./city');
+var cityCard_service_1 = require('./cityCard.service');
+var CityCardComponent = (function () {
+    function CityCardComponent(cityCardService) {
         this.cityCardService = cityCardService;
     }
-    AppComponent.prototype.ngOnInit = function () {
+    CityCardComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.cityCardService.getCities().then(function (cities) { return _this.cities = cities; });
+        this.cityCardService.getTemperature(this.city.name).then(function (response) { return _this.temp = Math.round(response.main.temp - 273.15); });
     };
-    AppComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', city_1.City)
+    ], CityCardComponent.prototype, "city", void 0);
+    CityCardComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            templateUrl: './src/app/app.component.html',
-            styles: [String(require('./app.component.css'))],
-            directives: [header_component_1.HeaderComponent, cityCard_component_1.CityCardComponent],
-            providers: [cityCard_service_1.CityCardService]
+            selector: 'city-card',
+            template: require('./cityCard.component.html'),
+            styles: [String(require('./cityCard.component.css'))]
         }), 
         __metadata('design:paramtypes', [cityCard_service_1.CityCardService])
-    ], AppComponent);
-    return AppComponent;
+    ], CityCardComponent);
+    return CityCardComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CityCardComponent = CityCardComponent;
+//# sourceMappingURL=cityCard.component.js.map
