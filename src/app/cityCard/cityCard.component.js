@@ -10,15 +10,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var city_1 = require('./city');
-var cityCard_service_1 = require('./cityCard.service');
 var CityCardComponent = (function () {
-    function CityCardComponent(cityCardService) {
-        this.cityCardService = cityCardService;
+    function CityCardComponent() {
     }
-    CityCardComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.cityCardService.getTemperature(this.city.name).then(function (response) { return _this.temp = Math.round(response.main.temp - 273.15); });
-    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', city_1.City)
@@ -29,7 +23,7 @@ var CityCardComponent = (function () {
             template: require('./cityCard.component.html'),
             styles: [String(require('./cityCard.component.css'))]
         }), 
-        __metadata('design:paramtypes', [cityCard_service_1.CityCardService])
+        __metadata('design:paramtypes', [])
     ], CityCardComponent);
     return CityCardComponent;
 }());

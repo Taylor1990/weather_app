@@ -1,6 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {City} from './city';
-import { CityCardService} from './cityCard.service';
 
 @Component({
     selector: 'city-card',
@@ -8,15 +7,7 @@ import { CityCardService} from './cityCard.service';
     styles: [String(require('./cityCard.component.css'))]
 })
 
-export class CityCardComponent implements OnInit {
+export class CityCardComponent{
     @Input()
     city: City;
-
-    private temp: number;
-
-    constructor(private cityCardService: CityCardService){}
-
-    ngOnInit(){
-        this.cityCardService.getTemperature(this.city.name).then(response => this.temp = Math.round(response.main.temp - 273.15));
-    }
 }

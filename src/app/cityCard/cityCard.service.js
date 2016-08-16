@@ -19,7 +19,7 @@ var CityCardService = (function () {
     CityCardService.prototype.getCities = function () {
         return Promise.resolve(mock_cities_1.CITIES);
     };
-    CityCardService.prototype.getTemperature = function (city) {
+    CityCardService.prototype.getWeather = function (city) {
         var open_weather = 'http://api.openweathermap.org/data/2.5/weather?q=';
         return this.http.get(open_weather + city + '&appid=13cb7fc7bbcbb873b6c84b9e84df4507').
             toPromise().then(function (response) { return response.json(); });
