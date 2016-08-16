@@ -1,0 +1,27 @@
+main{
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10%;
+}
+
+.modal_image{
+  max-width: 250px;
+  float: left;
+  display: block;
+  padding-right: 15px;
+}
+
+figure {
+  min-height: 350px;
+}
+
+@media screen and (max-width: 670px){
+  .modal{
+    margin: 0 auto;
+    max-width: 500px;
+  }
+
+  .modal_image {
+    max-width: 150px;
+  }
+}

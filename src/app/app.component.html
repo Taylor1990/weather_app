@@ -1,1 +1,32 @@
 <my-header></my-header>
+<main>
+    <city-card *ngFor="let city of cities"
+      [city] = "city"
+      (click) = "onClick(modal)">
+
+      <modal #modal class="modal">
+          <modal-header [show-close]="true">
+              <h4 class="modal-title">{{city.name}}</h4>
+          </modal-header>
+          <modal-body>
+              <figure>
+                <p><img class="modal_image" src= {{city.img}}></p>
+                <figcaption class="modal_description">
+                    <table>
+                      <tr><td>Влажность:</td><td>{{city.humidity}}%</td><tr>
+                      <tr><td>Давление:</td><td>{{city.pressure}}мм. рт. ст.</td></tr>
+                      <tr><td>Температура(ср):</td><td>{{city.temp}}&deg; C</td></tr>
+                      <tr><td>Температура(max):</td><td>{{city.temp_max}}&deg; C</td></tr>
+                      <tr><td>Температура(min):</td><td>{{city.temp_min}}&deg; C</td></tr>
+                      <tr><td>Погода:</td><td>{{city.clouds}}</td></tr>
+                      <tr><td>Скорость ветра:</td><td>{{city.wind}} м/с</td></tr>
+                    </table>
+                </figcaption>
+              </figure>
+          </modal-body>
+          <modal-footer>
+            <button type="button" class="btn btn-primary" (click)="modal.close()">Ok</button>
+          </modal-footer>
+      </modal>
+    </city-card>
+</main>
