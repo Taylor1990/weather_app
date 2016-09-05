@@ -11,11 +11,7 @@ module.exports = webpackMerge(commonConfig, {
 
   output: {
     path: helpers.root('dist'),
-<<<<<<< HEAD
-    publicPath: '/',
-=======
     publicPath: 'http://localhost:80/',
->>>>>>> f340ac8... Устранение бага с портом
     filename: '[name].[hash].js',
     chunkFilename: '[id].[hash].chunk.js'
   },
