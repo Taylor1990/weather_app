@@ -14,8 +14,12 @@ module.exports = webpackMerge(commonConfig, {
 <<<<<<< HEAD
     publicPath: 'http://localhost:80/',
 =======
+<<<<<<< HEAD
+    publicPath: 'http://localhost:80/',
+=======
     publicPath: 'http://localhost:8080/',
 >>>>>>> v0.0.1
+>>>>>>> release/v0.0.2
     filename: '[name].[hash].js',
     chunkFilename: '[id].[hash].chunk.js'
   },
